@@ -1,0 +1,39 @@
+\documentclass[fleqn]{article}
+\title{Interpretations of Probability}
+\author{Jonathan Bryan}
+\date{March 12 2017}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb}
+\setlength{\mathindent}{0pt}
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\newpage
+\pagenumbering{arabic}
+\section{Classical Interpretation of Probability} 
+Uses the concept of "equally likely outcomes". If two events are equally likely to occur then they have the same probability. More generally, if an outcome if one of $n$ different outcomes and each outcome is equally likely then their probability is $\frac{1}{n}$. Issue with this interpretation include:
+\begin{itemize}
+	\item The issue with this interpretation is that there is circular reasoning; while assessing the probability of an outcome we need to determine it is equally likely which is itself a calculation of probability.
+	\item  No systematic method exists within this framework to calculate probability of events that are not equally likely.
+\end{itemize}
+
+\section{Frequentist Interpretation of Probability} 
+The frequentist views the approximate probability of an event as the the frequency of that event calculated through a large number repeated trials conducted under similar conditions. Issue with this interpretation include:
+\begin{itemize}
+	\item Unclear  constitutes a "large number" enough to satisfy long-run results is unclear to be scientific enough.
+	\item Unclear how much variation there can be in the frequentest probability measure to meet the standard of "approximately" (e.g. how much can the probability of a fair coin vary from $\frac{1}{2}$ after 100,000 trials?).
+	\item Frequentist interpretation only applies to problems in which there can be, at least in principle, a large number of similar repetitions of a certain process.
+\end{itemize}
+
+\section{Subjective Interpretation of Probability} 
+The subjective probability of some event is represented by a belief of that probability determined using prior knowledge and some judgment of the likelihood of an event. Subjective probability can change depending on the observer's prior information and likelihood judgment of the event. Issues with this interpretation include:
+\begin{itemize}
+	\item The need for the judgment of a possibly infinite amount of likelihoods regarding an event to be consistent and free of contradiction is often unrealistic in practice
+	\item The lack of an "objective" approach when undertaking scientific analysis
+\end{itemize}
+\end{document}

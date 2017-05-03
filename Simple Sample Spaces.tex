@@ -1,0 +1,57 @@
+\documentclass[fleqn]{article}
+\title{Simple Sample Spaces and Counting Methods}
+\author{Jonathan Bryan}
+\date{March 12 2017}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb}
+\setlength{\mathindent}{0pt}
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\newpage
+\pagenumbering{arabic}
+\section{Simple Sample Space} 
+If a sample space $S$ contain outcomes $s_1,...,s_n$ finite outcomes then $S$ is a simple sample if $p(s_i) = \frac{1}{n}$. The probability of some event A is the number of outcomes contained with A divided by the total number of outcomes. $$p(A) = p(s_m = s_1, s_2, s_m \in A) = \frac{\# \; Events \; in \; s_m}{Total \; \# \; of \; Events} = \frac{2}{n}$$ Examples of simple sample spaces include:
+\begin{itemize}
+	\item Fair 6-sided die. $S = \{1,2,3,4,5,6\}$, $p(S = i) = \frac{1}{6} \forall \; i$
+	\item Fair coin toss. $S = \{H,T\}$, $p(S_i) = \frac{1}{2} \forall \; i$
+	\item Simple 4 number lottery. $S = \{0,...,9999\}$ , $p(S = i) = \frac{1}{10^4}$
+	\item Simple n number lottery. $S = \{0,...,10^n - 1\}$ , $p(S = i) = \frac{1}{10^n}$
+\end{itemize}
+\section{Counting Methods} 
+\subsection{Multiplication Rule}
+If the sample space of an event $S$ contains $n$ outcomes and the sample space of an event $T$ contains $m$ outcomes then the sample space of both events occurring contains $m*n$ outcomes. Examples of the multiplication rule include:
+\begin{itemize}
+	\item The sample space size for a pizza with 2 options for bread, 2 options for cheese, and 5 options for toppings is 2*2*5 = 20
+	\item The sample space for getting from town A to B with 3 via three different routes and town B to town C via 6 different routes is 3*6 = 18
+	\item The sample space for the results of tossing 5 fair coins is $2^5 = 32$
+\end{itemize}
+\subsection{Permutations}
+Also known as sampling without replacement, if we begin with $n$ total elements and then take one sample without replacement then we now have $n-1$ total elements. The number of permutations to selecting all $n$ total elements is $n!$ To find the number of permutations of selecting k elements from n total elements we divide the number of n sample space elements assuming no replacement by the number of $n - k$ sample space elements assuming no replacement.$$P_{n,\;k} = \frac{n!}{(n - k)!}$$ We can also think of permutations as the number of distinct orderings of k items selected without replacement
+from a collection of n different items where $0 \leq k \leq n$. Examples of permutations include:
+\begin{itemize}
+	\item The number of teams what can be selected from a pool of 10 players for 3 spots is 10*9*8 = 270
+	\item The number of executive leadership teams of two people selected from a group of 25 is 25*24 = 600
+	\item The number of different ways 4 books can be arranged on a shelf is 4*3*2*1 = 24
+\end{itemize}
+\subsection{Combinations}
+The number of combinations of $k$-size taken from $n$ elements is related to the number of permutations of $k$-size taken from $n$ elements. Specifically, $$P_{n,\;k} = C_{n,\;k} * k!$$ Combinations are distinct groupings of $k$ size taken from a total of $n$ elements. For an given $k$ selections from $n$ elements, the number of permutations will be equal to or larger than the number of combinations. This is because combinations do not consider the order of the elements and therefore represent a smaller universe of element groupings.$$C_{n,\;k} = \frac{P_{n\;k}}{k!} = \frac{n!}{(n-k)!k!}$$ We can think of one unit permutation unit of size k as equal to the product of one combination unit times $k!$ or the number permutation within that combination unit. Combinations can be referred to as binomial coefficients $\binom{n}{k} = \frac{n!}{(n-k)!k!}$. Some important properties of combinations are:
+\begin{itemize}
+	\item $\binom{n}{0} = \binom{n}{n} = 1$
+	\item $\binom{n}{k} = \binom{n}{n-k}$
+\end{itemize}
+\subsection{Sampling Schemes}
+\textbf{Sampling without replacement.} Each draw removes a unit of group out of the sample space. The number of permutations of drawing k objects from n total objects is the total number of possible outcomes for a \textit{sampling without replacement scheme}. Assuming the probability of each k number of draws is equal, the probability of getting any particular k-numbered draw is $\frac{1}{P_{n,k}} = \frac{(n-k)!}{n!}$.\\ \\
+\textbf{Ordered sampling with replacement.} Each draw removes a unit of a group that is then replaced back into the sample space. k-sized samples with the same elements in different orders are evaluated as different. Use the multiplication rule to calculate the total number of possible outcomes for an \textit{ordered sampling with replacement scheme}. Assuming the probability of each k number of draws is equal, the probability of getting any particular k-numbered draw is $\frac{1}{n^k}$.\\ \\
+\textbf{Unordered sampling with replacement.} Each draw removes a unit of a group that is then replace back into the sample space.  k-sized samples with the same elements in different orders are evaluated as the same. Use a modified combination to calculate the total number of possible outcomes for an \textit{unordered sampling with replacement scheme}, $\binom{n + k -1}{k}$. Assuming the probability of each k number of draws is equal, the probability of getting any particular k-numbered draw is $\frac{1}{\binom{n + k -1}{k}} = \frac{(n-1)!*k!}{(n+k-1)!}$.\\
+\subsection{Multinomial Coefficient}
+The multinomial coefficient is a generalization of the binomial coefficient. We use the multinomial coefficient $\binom{n}{n_1!,\;n_2!,\;...n_k!}$ to determine the number of distinct combinations of k total groups ($k \geq 2$) drawn from n distinct items, where the size of each group $n_1 + n_2,..., + n_k = n$. $$\binom{n}{n_1!,\;n_2!,\;...n_k!} = \frac{n!}{n_1!*n_2!*...*n_k!}$$\\ \\
+The multinomial coefficient can also be use to calculate the number of unique arrangements of elements with more than two distinct types/groups. We can treat the positions of each arrangement as a unique element and determine the number of unique combinations of these positions for k distinct groups. E.g. if we want to find the number of unique arrangements of 8 red balls and 4 green balls we can treat the positions each ball could occupy as i for $ i = {1,2,...,8}$. Then the number of uniquely ordered ball arrangements would be $\frac{n!}{n_1! * n_2!} = \frac{12!}{8!4!}$. 
+
+
+\end{document}
